@@ -42,7 +42,7 @@
 <body>
     <h1>Choose Your Own Adventure</h1>
     <p id="story">You find yourself in a magical forest filled with colorful creatures. What do you do?</p>
-    <img src="https://source.unsplash.com/random/200x200?sig=incrementingIdentifier" width="400">
+    <img src="https://images.unsplash.com/photo-1575719295896-cf2706895d25" alt="Magical Forest" width="400">
     <div class="choices">
         <button class="choice-button" id="choiceA">Talk to a blue creature</button>
         <button class="choice-button" id="choiceB">Follow the path of red flowers</button>
@@ -82,101 +82,7 @@
             });
             choiceB.addEventListener('click', function() {
                 story.textContent = "You rest under a colorful tree and have a delightful nap.";
-                choiceA.style.display = "none";
-                choiceB.style.display = "none";
-            });
-        });
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Story</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #fce7a7;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            color: #ff4e00;
-        }
-        p {
-            font-size: 18px;
-            max-width: 600px;
-            color: #333;
-        }
-        .choices {
-            display: flex;
-            margin-top: 20px;
-        }
-        .choice-button {
-            padding: 10px 20px;
-            background-color: #ff4e00;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin: 0 10px;
-        }
-        img {
-            max-width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <h1>Choose Your Own Adventure</h1>
-    <p id="story">You find yourself in a magical forest filled with colorful creatures. What do you do?</p>
-    <img src="https://picsum.photos/seed/picsum/200/300" alt="Magical Forest">
-    <div class="choices">
-        <button class="choice-button" id="choiceA">Talk to a blue creature</button>
-        <button class="choice-button" id="choiceB">Follow the path of red flowers</button>
-    </div>
-
-    <script>
-        const story = document.getElementById('story');
-        const choiceA = document.getElementById('choiceA');
-        const choiceB = document.getElementById('choiceB');
-
-        choiceA.addEventListener('click', function() {
-            story.textContent = "You chose to talk to a blue creature. It leads you to a hidden waterfall.";
-            choiceA.textContent = "Swim in the waterfall";
-            choiceB.textContent = "Follow the path behind the waterfall";
-            
-            choiceA.addEventListener('click', function() {
-                story.textContent = "You swim in the waterfall and find a secret underwater cave filled with treasures.";
-                choiceA.style.display = "none";
-                choiceB.style.display = "none";
-            });
-            choiceB.addEventListener('click', function() {
-                story.textContent = "You follow the path behind the waterfall and discover a magical realm.";
-                choiceA.style.display = "none";
-                choiceB.style.display = "none";
-            });
-        });
-
-        choiceB.addEventListener('click', function() {
-            story.textContent = "You chose to follow the path of red flowers. It leads you to a vibrant garden.";
-            choiceA.textContent = "Explore the garden";
-            choiceB.textContent = "Rest under a colorful tree";
-            
-            choiceA.addEventListener('click', function() {
-                story.textContent = "You explore the garden and encounter a friendly unicorn.";
-                choiceA.style.display = "none";
-                choiceB.style.display = "none";
-            });
-            choiceB.addEventListener('click', function() {
-                story.textContent = "You rest under a colorful tree and have a delightful nap.";
-                choiceA.style.display = "none";
+                choiceA.style display = "none";
                 choiceB.style.display = "none";
             });
         });
