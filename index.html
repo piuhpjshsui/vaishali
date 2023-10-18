@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f7f7f7;
+            background-color: #f0f0f0;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,11 +18,12 @@
             height: 100vh;
         }
         h1 {
-            color: #333;
+            color: #007BFF;
         }
         p {
             font-size: 18px;
             max-width: 600px;
+            color: #333;
         }
         .choices {
             display: flex;
@@ -40,7 +41,7 @@
 </head>
 <body>
     <h1>Choose Your Own Adventure</h1>
-    <p id="story">You are standing at a crossroads. What do you do?</p>
+    <p id="story">You are on a quest to find the lost treasure of El Dorado. You stand at a crossroads deep in the jungle. What do you do?</p>
     <div class="choices">
         <button class="choice-button" id="choiceA">Go left</button>
         <button class="choice-button" id="choiceB">Go right</button>
@@ -52,22 +53,34 @@
         const choiceB = document.getElementById('choiceB');
 
         choiceA.addEventListener('click', function() {
-            story.textContent = "You chose to go left. You find a treasure chest!";
-            choiceA.style.display = "none";
-            choiceB.style.display = "none";
-        });
-
-        choiceB.addEventListener('click', function() {
-            story.textContent = "You chose to go right. You stumble into a dark cave.";
-            choiceA.textContent = "Enter the cave";
-            choiceB.textContent = "Run away!";
+            story.textContent = "You chose to go left. You encounter a friendly tribe who offers to guide you through the jungle.";
+            choiceA.textContent = "Accept their help";
+            choiceB.textContent = "Decline and continue alone";
+            
             choiceA.addEventListener('click', function() {
-                story.textContent = "You enter the cave and discover a hidden world.";
+                story.textContent = "You accept the tribe's help and make friends. Together, you find the treasure!";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
             choiceB.addEventListener('click', function() {
-                story.textContent = "You run away from the cave and return to the crossroads.";
+                story.textContent = "You decline their help and face numerous dangers alone. You never find the treasure.";
+                choiceA.style.display = "none";
+                choiceB.style.display = "none";
+            });
+        });
+
+        choiceB.addEventListener('click', function() {
+            story.textContent = "You chose to go right. You discover an ancient temple with a locked door.";
+            choiceA.textContent = "Search for the key";
+            choiceB.textContent = "Return to the crossroads";
+            
+            choiceA.addEventListener('click', function() {
+                story.textContent = "You search for the key and find it hidden in the jungle. You unlock the door and find the treasure!";
+                choiceA.style.display = "none";
+                choiceB.style.display = "none";
+            });
+            choiceB.addEventListener('click', function() {
+                story.textContent = "You return to the crossroads and miss the chance to find the treasure.";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
