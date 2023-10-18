@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f0f0f0;
+            background-color: #fce7a7;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,7 +18,7 @@
             height: 100vh;
         }
         h1 {
-            color: #007BFF;
+            color: #ff4e00;
         }
         p {
             font-size: 18px;
@@ -31,7 +31,7 @@
         }
         .choice-button {
             padding: 10px 20px;
-            background-color: #007BFF;
+            background-color: #ff4e00;
             color: white;
             border: none;
             cursor: pointer;
@@ -41,10 +41,11 @@
 </head>
 <body>
     <h1>Choose Your Own Adventure</h1>
-    <p id="story">You are on a quest to find the lost treasure of El Dorado. You stand at a crossroads deep in the jungle. What do you do?</p>
+    <p id="story">You find yourself in a magical forest filled with colorful creatures. What do you do?</p>
+    <img src="https://via.placeholder.com/400" alt="Magical Forest" width="400">
     <div class="choices">
-        <button class="choice-button" id="choiceA">Go left</button>
-        <button class="choice-button" id="choiceB">Go right</button>
+        <button class="choice-button" id="choiceA">Talk to a blue creature</button>
+        <button class="choice-button" id="choiceB">Follow the path of red flowers</button>
     </div>
 
     <script>
@@ -53,34 +54,34 @@
         const choiceB = document.getElementById('choiceB');
 
         choiceA.addEventListener('click', function() {
-            story.textContent = "You chose to go left. You encounter a friendly tribe who offers to guide you through the jungle.";
-            choiceA.textContent = "Accept their help";
-            choiceB.textContent = "Decline and continue alone";
+            story.textContent = "You chose to talk to a blue creature. It leads you to a hidden waterfall.";
+            choiceA.textContent = "Swim in the waterfall";
+            choiceB.textContent = "Follow the path behind the waterfall";
             
             choiceA.addEventListener('click', function() {
-                story.textContent = "You accept the tribe's help and make friends. Together, you find the treasure!";
+                story.textContent = "You swim in the waterfall and find a secret underwater cave filled with treasures.";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
             choiceB.addEventListener('click', function() {
-                story.textContent = "You decline their help and face numerous dangers alone. You never find the treasure.";
+                story.textContent = "You follow the path behind the waterfall and discover a magical realm.";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
         });
 
         choiceB.addEventListener('click', function() {
-            story.textContent = "You chose to go right. You discover an ancient temple with a locked door.";
-            choiceA.textContent = "Search for the key";
-            choiceB.textContent = "Return to the crossroads";
+            story.textContent = "You chose to follow the path of red flowers. It leads you to a vibrant garden.";
+            choiceA.textContent = "Explore the garden";
+            choiceB.textContent = "Rest under a colorful tree";
             
             choiceA.addEventListener('click', function() {
-                story.textContent = "You search for the key and find it hidden in the jungle. You unlock the door and find the treasure!";
+                story.textContent = "You explore the garden and encounter a friendly unicorn.";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
             choiceB.addEventListener('click', function() {
-                story.textContent = "You return to the crossroads and miss the chance to find the treasure.";
+                story.textContent = "You rest under a colorful tree and have a delightful nap.";
                 choiceA.style.display = "none";
                 choiceB.style.display = "none";
             });
