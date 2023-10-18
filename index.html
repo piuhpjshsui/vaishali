@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Webpage</title>
+    <title>Interactive Story</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
             text-align: center;
         }
         h1 {
             color: #333;
         }
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
-    <h1>Welcome to My Interactive Webpage</h1>
-    <p>Click the button to change the text:</p>
-    <button id="changeTextButton">Change Text</button>
-    <p id="dynamicText">This is some dynamic text.</p>
+    <h1>Choose Your Own Adventure</h1>
+    <p id="story">You are standing at a crossroads. What do you do?</p>
+    <button id="choiceA">Go left</button>
+    <button id="choiceB">Go right</button>
 
     <script>
-        // JavaScript to change the text when the button is clicked
-        const button = document.getElementById('changeTextButton');
-        const dynamicText = document.getElementById('dynamicText');
-        
-        button.addEventListener('click', function() {
-            dynamicText.textContent = 'Text has been changed!';
+        const story = document.getElementById('story');
+        const choiceA = document.getElementById('choiceA');
+        const choiceB = document.getElementById('choiceB');
+
+        choiceA.addEventListener('click', function() {
+            story.textContent = "You chose to go left. You find a treasure chest!";
+            choiceA.style.display = "none";
+            choiceB.style.display = "none";
+        });
+
+        choiceB.addEventListener('click', function() {
+            story.textContent = "You chose to go right. You stumble into a dark cave.";
+            choiceA.textContent = "Enter the cave";
+            choiceB.textContent = "Run away!";
+            choiceA.addEventListener('click', function() {
+                story.textContent = "You enter the cave and discover a hidden world.";
+                choiceA.style.display = "none";
+                choiceB.style.display = "none";
+            });
+            choiceB.addEventListener('click', function() {
+                story.textContent = "You run away from the cave and return to the crossroads.";
+                choiceA.style.display = "none";
+                choiceB.style.display = "none";
+            });
         });
     </script>
 </body>
