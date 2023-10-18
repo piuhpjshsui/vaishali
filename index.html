@@ -8,17 +8,43 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
         h1 {
             color: #333;
+        }
+        p {
+            font-size: 18px;
+            max-width: 600px;
+        }
+        .choices {
+            display: flex;
+            margin-top: 20px;
+        }
+        .choice-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
     <h1>Choose Your Own Adventure</h1>
     <p id="story">You are standing at a crossroads. What do you do?</p>
-    <button id="choiceA">Go left</button>
-    <button id="choiceB">Go right</button>
+    <div class="choices">
+        <button class="choice-button" id="choiceA">Go left</button>
+        <button class="choice-button" id="choiceB">Go right</button>
+    </div>
 
     <script>
         const story = document.getElementById('story');
